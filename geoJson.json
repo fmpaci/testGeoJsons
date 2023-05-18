@@ -3,7 +3,7 @@
   "features": [
         {
           "type": "Feature",
-          properties":{"Country":"CO","NAME":"Medellin"}
+          "properties":{"Country":"CO","NAME":"Medellin"},
           "geometry": {
           "coordinates": [[
               [-75.627051, 6.146031], [-75.627052, 6.146022], [-75.62705, 6.146016], [-75.627046, 6.146012], [-75.627041, 6.146009],
