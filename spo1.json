@@ -3,13 +3,6 @@
   "features": [
     {
       "type"      : "Feature",
-      "properties": {
-        "Name" : "Shit1",
-        "Country"     : "BRA",
-        "Country Name": "Brazil",
-        "Site"        : "SPO",
-        "Site Name"   : "Sao Paulo"
-      },
       "geometry"  : {
       "type": "Polygon", "coordinates": [
         [
@@ -17,7 +10,14 @@
         ]
       ]
 
-    }
+    },
+            "properties": {
+        "Name" : "Shit1",
+        "Country"     : "BRA",
+        "Country Name": "Brazil",
+        "Site"        : "SPO",
+        "Site Name"   : "Sao Paulo"
+      }
     },
     {
       "type"      : "Feature",
