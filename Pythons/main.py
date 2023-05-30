@@ -23,7 +23,7 @@ areas_mas_pequenas = [shape(feature['geometry']) for feature in data_areas_mas_p
 # Restar las áreas más pequeñas del polígono mayor
 resultado = poligono_mayor.difference(unary_union(areas_mas_pequenas))
 
-print(resultado)
+
 # Crear un nuevo GeoJSON con el resultado combinado
 resultado_geojson = {
     "type": "FeatureCollection",
