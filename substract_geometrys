@@ -1,0 +1,27 @@
+import json
+from shapely.geometry import shape
+
+# Cargar el archivo GeoJSON de São Paulo
+with open('sao_paulo.geojson') as file:
+    data = json.load(file)
+
+sao_paulo_polygon = shape(data['features'][0]['geometry'])
+
+# Lista para almacenar los polígonos a conservar
+poligonos_a_conservar = []
+
+# Iterar sobre los polígonos y comparar el área con el área de São Paulo
+for feature in data['features']:
+    polygon = shape(feature['geometry'])
+    if polygon.area >= sao_paulo_polygon.area:
+        poligonos_a_conservar.append(feature)
+
+# Crear un nuevo objeto GeoJSON con los polígonos a conservar
+nuevo_geojson = {
+    'type': 'FeatureCollection',
+    'features': poligonos_a_conservar
+}
+
+# Guardar el resultado en un nuevo archivo GeoJSON
+with open('sao_paulo_sin_poligonos_pequenos.geojson', 'w') as file:
+    json.dump(nuevo_geojson, file)
